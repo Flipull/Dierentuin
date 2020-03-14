@@ -1,0 +1,63 @@
+﻿<Window x:Class="WpfCore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCore"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Content="Feed Animals:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Grid.Column="0" Grid.Row="1" Content="All" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center"
+            Click="FeedAll_Click"/>
+        <Button Grid.Column="1" Grid.Row="1" Content="Monkeys" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center"
+            Click="FeedMonkeys_Click"/>
+        <Button Grid.Column="2" Grid.Row="1" Content="Lions" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center"
+            Click="FeedLions_Click"/>
+        <Button Grid.Column="3" Grid.Row="1" Content="Elephants" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center"
+            Click="FeedElephants_Click"/>
+
+        <Label Grid.Column="5" Grid.Row="0" Grid.ColumnSpan="3" Content="Create Animals:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Grid.Column="5" Grid.Row="1" Content="Monkeys" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Click="CreateMonkey_Click"/>
+        <Button Grid.Column="6" Grid.Row="1" Content="Lions" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center"
+            Click="CreateLion_Click"/>
+        <Button Grid.Column="7" Grid.Row="1" Content="Elephants" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center"
+            Click="CreateElephant_Click"/>
+
+        <ListView Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="8" Margin="10" Name="listview_animals">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Type" Width="150" DisplayMemberBinding="{Binding }" />
+                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Energy" Width="50" DisplayMemberBinding="{Binding Energy}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--
+        <ListView Grid.Column="0" Grid.Row="2">
+            <ListView.View>
+                
+            </ListView.View>
+            <ListViewItem>
+                
+            </ListViewItem>
+        </ListView>
+-->
+        </Grid>
+</Window>
