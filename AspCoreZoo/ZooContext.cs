@@ -9,11 +9,8 @@ namespace AspCoreZoo
 {
     public class ZooContext : DbContext
     {
-        //singleton constructor
-        //public ZooContext() : base() { }
-        //scoped constructor
         public ZooContext(DbContextOptions<ZooContext> options) : base(options) { }
-        
+
         public DbSet<Animal> Animals { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

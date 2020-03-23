@@ -18,8 +18,6 @@ namespace AspCoreZoo.Controllers
         // GET: api/<controller>
         [HttpGet]
         [HttpPost]
-//        public IEnumerable<Animal> Get() => _context.Animals.AsEnumerable();
-        
         public string Get()
         {
             return JsonConvert.SerializeObject(
